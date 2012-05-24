@@ -1,0 +1,36 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #4169E1;
+}
+
+a {
+ color: #00B7FF;
+}
+
+pre {
+background: #F8F8FF;
+margin-top: 2cm;
+margin-left: 2cm;
+}
+
+
+#hiper {
+background:#D3D3D3;
+weigth: auto;
+heigth: 300px;
+float: rigth;
+padding-top: 2px;
+padding-left: 2px;
+padding-bottom: 2px;
+color: red;
+}
+
+#synset {
+heigth:300px;
+weigth:auto;
+float:left;
+}
+
+#traducao {
+}

@@ -1,0 +1,47 @@
+#total 
+ #hyper
+  p Hiperonimos
+  ul
+   each item in Hyper
+    - var link = "/home?id="+item.id
+    li
+     a(href= link)  #{item.value[0]} -- #{item.value[1]}
+  
+ #synset
+  p  Id : #{id}
+  p  Gloss em inglês : #{gloss_en}
+  p  Palavras em inglês:
+  ul 
+   each item in palavras_en
+    - var link = "/aparece?word="+item	
+    li 
+     a(href= link) #{item}
+  p  Exemplos em inglês : 
+  ul
+   each item in exemplos
+    li #{item}
+  p Hiponimos
+  ul
+   each item in Hypo
+    - var link = "/home?id="+item.id
+    li
+     a(href= link) #{item.value[0]} -- #{item.value[1]}
+
+ #traducao
+  p Tradução
+  ul
+   each item in palavras_pt
+    li
+     #{item.value.words_trans} -- #{item.value.gloss_trans}
+   - var tradlink = id
+   p
+   form(method="get", action = '/traducao')
+    input(type="hidden", name = "id", value = tradlink)
+    label Palavras:
+    input(type="text", name= "words_trans")
+    p
+    label Gloss: 
+    input(type="text", name="gloss_trans")
+    p
+    input(type="submit", value="Registrar Traducao")
+

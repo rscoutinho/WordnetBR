@@ -1,0 +1,7 @@
+#total
+ p Synsets
+ ul 
+  each item in dados
+   - var link = "/home?id="+item.id
+   li 
+     a(href= link)#{item.key} -- #{item.value}
