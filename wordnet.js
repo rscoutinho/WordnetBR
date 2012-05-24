@@ -54,7 +54,6 @@ app.get('/aparece',function(req,res){
 app.get('/home',function(req,res){
     var id_synset = req.query['id']
     db.get(id_synset, function(err,doc){
-	console.log(doc)
 	db.view('busca/hyper',{key:id_synset},function(err,arq){
 	    db.view('busca/hypo',{key:id_synset},function(err,aqr){
 		db.view('busca/trans',{key:id_synset},function(err,qra){
@@ -68,12 +67,12 @@ app.get('/home',function(req,res){
 
 //Gravacao traducao
 app.get('/traducao',function(req,res){
-    db.save(req.query["gloss_trans"],{
+    db.save(" "+Math.random(),{
 	words_trans: req.query["words_trans"],
 	gloss_trans: req.query["gloss_trans"],
 	id_origem: req.query["id"]
     })
-    res.send("salvo")
+    res.send("salvo <p><a href='/index'> Voltar </a></p>")
 })
 
 app.listen(3467);
